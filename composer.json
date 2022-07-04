@@ -1,0 +1,53 @@
+{
+    "name": "aicinnovation/omnipay-elavon",
+     "type": "library",
+    "description": "Elavon payments driver for the Omnipay payment processing library",
+    "keywords": [
+        "elavon",
+        "converge",
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "payments"
+    ],
+    "homepage": "https://github.com/christopheaic/omnipay-elavon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "christophe dhayer",
+            "email": "christophe.dhayer@aicinnovation.com"
+        },
+        {
+            "name": "LemonStand",
+            "email": "andy@lemonstand.com"
+        },
+        {
+            "name": "LXRandCo",
+            "email": "hugo.v@lxrco.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Elavon\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/common": "^3.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.0",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 src/",
+        "fix-style": "phpcbf -p --standard=PSR2 src/"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    }
+}
