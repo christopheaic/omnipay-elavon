@@ -340,7 +340,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
     }
 
     /**
-     * @return array
+     * @return string
      */
     protected function getBaseData()
     {
