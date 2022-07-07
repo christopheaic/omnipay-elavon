@@ -17,14 +17,14 @@ abstract class ConvergeTransactionManage extends ConvergeAbstractRequest
     /**
      * Get the data needed for a transaction modification
      *
-     * @return array
+     * @return string
      */
-    public function getData()
+    public function getData(): string
     {
         $this->manageValidate();
 
         $data =
-            '<ssl_transaction_type>' . '$this->transactionType' . '</ssl_transaction_type>' .
+            '<ssl_transaction_type>' . $this->transactionType . '</ssl_transaction_type>' .
             '<ssl_txn_id>' . $this->getTransactionReference() . '</ssl_txn_id>' .
             '<ssl_amount>' . $this->getAmount() . '</ssl_amount>';
 
