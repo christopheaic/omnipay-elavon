@@ -78,7 +78,7 @@ class ConvergeVoidRequest extends ConvergeTransactionManage
         $this->validate('transactionReference');
     }
 
-    public function getData()
+    public function getData() : string
     {
         $this->manageValidate();
 

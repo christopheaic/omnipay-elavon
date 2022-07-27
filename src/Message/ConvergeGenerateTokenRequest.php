@@ -104,7 +104,7 @@ class ConvergeGenerateTokenRequest extends ConvergeAbstractRequest
 {
     protected $transactionType = 'ccgettoken';
 
-    public function getData()
+    public function getData() : string
     {
         $data =
             '<ssl_transaction_type>' . $this->transactionType . '</ssl_transaction_type>' .
