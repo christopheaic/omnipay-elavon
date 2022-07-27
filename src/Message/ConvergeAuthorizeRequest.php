@@ -104,7 +104,7 @@ class ConvergeAuthorizeRequest extends ConvergeAbstractRequest
 {
     protected $transactionType = 'ccauthonly';
 
-    public function getData()
+    public function getData() : string
     {
         if ($this->getCard() != null) {
             $this->validate('amount', 'card');

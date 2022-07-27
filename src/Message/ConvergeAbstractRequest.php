@@ -342,7 +342,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
     /**
      * @return string
      */
-    protected function getBaseData()
+    protected function getBaseData() : string
     {
         $data =
             '<ssl_merchant_id>' . $this->getMerchantId() . '</ssl_merchant_id>' .
