@@ -104,7 +104,7 @@ class ConvergeGenerateTokenRequest extends ConvergeAbstractRequest
 {
     protected $transactionType = 'ccgettoken';
 
-    public function getData() : string
+    public function getData(): string
     {
         $data =
             '<ssl_transaction_type>' . $this->transactionType . '</ssl_transaction_type>' .
@@ -125,7 +125,7 @@ class ConvergeGenerateTokenRequest extends ConvergeAbstractRequest
             '<ssl_country>' . $this->getCard()->getCountry() . '</ssl_country>' .
             '<ssl_add_token>' . 'Y' . '</ssl_add_token>' .
             '<ssl_show_form>' . 'false' . '</ssl_show_form>' .
-            '<ssl_result_format>' . 'ASCII' . '</ssl_result_format>';;
+            '<ssl_result_format>' . 'ASCII' . '</ssl_result_format>';
 
         return $this->getBaseData() . $data;
     }
