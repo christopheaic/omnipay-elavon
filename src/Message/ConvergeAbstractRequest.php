@@ -110,7 +110,7 @@ use Omnipay\Common\CreditCard;
 abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     protected $testEndpoint = 'https://api.demo.convergepay.com/VirtualMerchantDemo/processxml.do';
-    protected $liveEndpoint = ' https://api.convergepay.com/VirtualMerchant/processxml.do';
+    protected $liveEndpoint = 'https://api.convergepay.com/VirtualMerchant/processxml.do';
 
     public function getEndpoint()
     {
