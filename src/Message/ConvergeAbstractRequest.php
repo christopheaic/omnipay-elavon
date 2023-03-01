@@ -181,6 +181,14 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
     }
 
     /**
+     * @inheritDoc
+     */
+    public function setDescription($value)
+    {
+        return $this->setParameter('description', substr($value, 0, 17));
+    }
+
+    /**
      * Get the SSL show form parameter
      *
      * @return string
