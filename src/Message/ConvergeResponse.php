@@ -12,15 +12,6 @@ class ConvergeResponse extends AbstractResponse
     {
         $this->request = $request;
 
-        if (str_contains($data, 'error')) {
-            $errors = explode(PHP_EOL, $data);
-            foreach ($errors as $err) {
-                [$keyError, $valueError] = explode('=', $err);
-                $this->data[$keyError] = $valueError;
-            }
-            return;
-        }
-
         $xml = simplexml_load_string($data, "SimpleXMLElement", LIBXML_NOCDATA);
         $json = json_encode($xml);
         $this->data = json_decode($json, TRUE);
