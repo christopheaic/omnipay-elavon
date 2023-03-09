@@ -12,7 +12,7 @@ class ConvergeResponse extends AbstractResponse
     {
         $this->request = $request;
 
-        $xml = simplexml_load_string($data, "SimpleXMLElement", LIBXML_NOCDATA);
+        $xml = simplexml_load_string($data);
         $json = json_encode($xml);
         $this->data = json_decode($json, TRUE);
     }
