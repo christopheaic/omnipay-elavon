@@ -114,13 +114,9 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
 
     public function getEndpoint()
     {
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *');
-        $t = ($this->getTestMode()) ? $this->testEndpoint : $this->liveEndpoint;
-        echo(json_encode($t));
-        exit();
-
-        return ($this->getTestMode()) ? $this->testEndpoint : $this->liveEndpoint;
+        //tempory quick fix
+        return  $this->testEndpoint; 
+        //return ($this->getTestMode()) ? $this->testEndpoint : $this->liveEndpoint;
     }
 
     /**
