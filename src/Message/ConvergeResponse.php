@@ -12,12 +12,6 @@ class ConvergeResponse extends AbstractResponse
     {
         $this->request = $request;
 
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *');
-        $t = $data;
-        echo(json_encode($t));
-        exit();
-
         $xml = simplexml_load_string($data);
         $json = json_encode($xml);
         $this->data = json_decode($json, TRUE);
