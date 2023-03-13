@@ -114,9 +114,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
 
     public function getEndpoint()
     {
-        //tempory quick fix
-        return  $this->testEndpoint; 
-        //return ($this->getTestMode()) ? $this->testEndpoint : $this->liveEndpoint;
+        return ($this->getTestMode()) ? $this->testEndpoint : $this->liveEndpoint;
     }
 
     /**
