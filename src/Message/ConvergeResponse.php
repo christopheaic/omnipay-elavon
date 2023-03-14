@@ -12,9 +12,21 @@ class ConvergeResponse extends AbstractResponse
     {
         $this->request = $request;
 
+        libxml_use_internal_errors(true);
+
         $xml = simplexml_load_string($data);
-        $json = json_encode($xml);
-        $this->data = json_decode($json, TRUE);
+        if ($xml) {
+            $json = json_encode($xml);
+            $this->data = json_decode($json, TRUE);
+            return;
+        }
+
+        $response = explode(PHP_EOL, $data);
+        foreach ($response as $responseElement) {
+            [$keyElement, $valueElement] = explode('=', $responseElement);
+            $this->data[$keyElement] = $valueElement;
+        }
+        return;
     }
 
     public function isSuccessful()
